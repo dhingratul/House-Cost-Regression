@@ -23,7 +23,7 @@ def baselineScores(X_train, y_train, X_test, y_test):
     opt1 = SVR(kernel='rbf', C=73.77654120502568, gamma=1.1539713541666757)
     opt2 = SVR(kernel='rbf', C=18.885695893079657, gamma=18.38411458333333)
     opt3 = SVR(kernel='rbf', C=25.384843416756983, gamma=1.170620957526686)
-    # Ayan
+    # Linear Model
     lin = SVR(kernel='linear', C=10, epsilon=0.2)
     # Predictions
     clf1 = lin.fit(X_train, y_train)
@@ -75,7 +75,7 @@ res = clf.predict(X_test)
 mse = mean_squared_error(y_test, res)
 print("\n MSE DL:", mse)
 mse1, mse2, mse3, mse4 = baselineScores(X_train, y_train, X_test, y_test)
-print("\n MSE Ayan:", mse1)
+print("\n MSE Lin:", mse1)
 print("\n MSE OPT1:", mse2)
 print("\n MSE OPT2:", mse3)
 print("\n MSE OPT3:", mse4)
